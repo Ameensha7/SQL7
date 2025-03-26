@@ -1,0 +1,10 @@
+DELIMITER $$ 
+CREATE FUNCTION GetWeekdayName(input_date DATE) 
+RETURNS VARCHAR(20) 
+DETERMINISTIC 
+BEGIN 
+RETURN DAYNAME(input_date); 
+END$$ 
+DELIMITER ; 
+
+SELECT GetWeekdayName('2025-03-17') AS Weekday;
